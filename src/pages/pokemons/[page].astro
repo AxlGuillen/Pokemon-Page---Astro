@@ -16,6 +16,7 @@ export const getStaticPaths = (async({ paginate }) => {
 
 const title = "Pokemon Static | Home"
 const { page } = Astro.props;
+
 ---
 
 <MainLayout title={title}>
@@ -34,12 +35,13 @@ const { page } = Astro.props;
 	</section>
 
 	<section class="flex mt-10 gap-2 items-center">
-		<a class="btn" href={ page.url.prev }>Anteriores</a>
-		<a class="btn" href={ page.url.next }>Siguientes</a>
+		<a class:list={[ 'btn', page.currentPage === 1 && 'disabled' ]}
+			 href={ page.url.prev }>Anteriores</a>
+		<a class:list={[ 'btn', { disabled: !page.url.next } ]} href={ page.url.next }>Siguientes</a>
 
 		<div class="flex flex-1"></div>
 
-		<span>Pagina 1</span>
+		<span class="text-xl font-bold">Pagina {page.currentPage}</span>
 	</section>
 </MainLayout>
 
