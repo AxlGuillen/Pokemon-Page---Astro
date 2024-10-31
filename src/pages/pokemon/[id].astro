@@ -2,7 +2,15 @@
 import MainLayout from "../../layouts/MainLayout.astro"
 import type { GetStaticPaths } from "astro";
 import type { PokemonListResponse } from "../../interfaces/pokemon-list-response"
-import PokemonCard from "../../components/pokemons/PokemonCard.astro";
+
+// Parh relativo
+//import PokemonCard from "../../components/pokemons/PokemonCard.astro";
+// Path absoluto
+//import PokemonCard from "src/components/pokemons/PokemonCard.astro";
+// Path alias
+import PokemonCard from "@componentes/pokemons/PokemonCard.astro";
+
+
 
 export const getStaticPaths = (async() => {
     
