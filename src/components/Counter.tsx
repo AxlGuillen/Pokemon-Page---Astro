@@ -1,11 +1,18 @@
-import { createSignal } from "solid-js";
+import type { JSX } from "astro/jsx-runtime";
+import { createSignal, type Component } from "solid-js";
 
-export const Counter = () => {
-  const [counter, setCounter] = createSignal(13);
+interface Props {
+  initValue: number;
+  children?: JSX.Element;
+}
+
+export const Counter: Component<Props> = (props) => {
+  const [counter, setCounter] = createSignal(props.initValue);
 
   return (
     <div>
-      <h1 class="text-4xl">Counter</h1>
+      {/* <h1 class="text-4xl">Counter</h1> */}
+      {props.children}
       <h3 class="text-xl">Current Count: {counter()}</h3>
 
       <button

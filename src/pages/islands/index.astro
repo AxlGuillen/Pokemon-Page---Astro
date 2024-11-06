@@ -25,7 +25,12 @@ const counterValue = 20;
   >
   </div>
 
-  <Counter client:only="solid-js" />
-    <Title>Counter Island</Title>
-  </Counter>
+  <Counter 
+    transition:persist="counter" 
+    transition:persist-props 
+    initValue={counterValue} 
+    client:visible 
+  >
+    <Title>Counter island</Title>
+</Counter>
 </MainLayout>
