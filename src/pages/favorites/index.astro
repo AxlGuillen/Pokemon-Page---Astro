@@ -1,4 +1,5 @@
 ---
+import { FavoritePokemos } from "@componentes/pokemons/FavoritePokemons"
 import Title from "@componentes/shared/Title.astro"
 import MainLayout from "@layouts/MainLayout.astro"
 
@@ -6,4 +7,6 @@ import MainLayout from "@layouts/MainLayout.astro"
 
 <MainLayout>
     <Title>Favoritos</Title>
+
+    <FavoritePokemos client:only="solid-js"/>
 </MainLayout>
